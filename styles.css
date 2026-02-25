@@ -1,0 +1,135 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.face {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  background: #F5A623;
+  border-radius: 50%;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+
+.forehead {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 48px;
+  background: #F5C842;
+  border-radius: 50% 50% 20% 20%;
+  z-index: 2;
+}
+
+.eyes {
+  position: absolute;
+  top: 108px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  z-index: 3;
+}
+.eye {
+  width: 58px;
+  height: 58px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+.pupil {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #4A90D9;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pupil::after {
+  content: '';
+  position: absolute;
+  width: 9px; height: 9px;
+  background: white;
+  border-radius: 50%;
+  top: 4px; left: 4px;
+}
+
+.nose {
+  position: absolute;
+  top: 158px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 28px;
+  background: #E8943A;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.mustache-wrap {
+  position: absolute;
+  top: 100px;
+  left: -5px;
+  transform: scale(0.40);
+  transform-origin: 0 0;
+  z-index: 4;
+  width: 700px;
+  height: 400px;
+}
+
+.mustache {
+  width: 180px;
+  height: 180px;
+  left: 100px;
+  border-radius: 50%;
+  position: absolute;
+  color: #F5C842;
+  box-shadow: 150px 240px 0 0 currentColor, 300px 240px 0 0 currentColor;
+}
+.mustache::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 120px;
+  width: 210px;
+  height: 120px;
+  border-bottom: solid 180px currentColor;
+  border-radius: 0 0 0 100%;
+  transform: rotate(-40deg);
+  transform-origin: right 210px;
+}
+.mustache::after {
+  content: "";
+  position: absolute;
+  left: 390px;
+  top: 120px;
+  width: 210px;
+  height: 120px;
+  border-bottom: solid 180px currentColor;
+  border-radius: 0 0 100% 0;
+  transform: rotate(40deg);
+  transform-origin: left 210px;
+}
